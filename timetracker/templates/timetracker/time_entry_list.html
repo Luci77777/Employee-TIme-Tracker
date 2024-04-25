@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Entry List</title>
+    <style>
+        /* Define styles for the heading */
+        h1 {
+            color: navy;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Define styles for the list items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        
+        /* Define styles for the "Add Time Entry" link */
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time Entry List</h1>
+    <ul>
+        {% for entry in time_entries %}
+            <li>{{ entry }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_time_entry' %}">Add Time Entry</a>
+    <a href='/admin'>Admin</a>
+</body>
+</html>
